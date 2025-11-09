@@ -19,7 +19,6 @@
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
-		<IsAotCompatible>true</IsAotCompatible>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
 	</PropertyGroup>
