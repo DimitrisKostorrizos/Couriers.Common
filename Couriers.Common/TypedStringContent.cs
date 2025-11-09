@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 
 namespace Couriers.Common
@@ -57,30 +56,7 @@ namespace Couriers.Common
         {
 
         }
-#if NET7_0_OR_GREATER
 
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        /// <param name="content">The content</param>
-        /// <param name="mediaType">The media type</param>
-        public TypedStringContent(string content, MediaTypeHeaderValue mediaType) : base(content, mediaType)
-        {
-
-        }
-
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        /// <param name="content">The content</param>
-        /// <param name="encoding">The encoding</param>
-        /// <param name="mediaType">The media type</param>
-        public TypedStringContent(string content, Encoding? encoding, MediaTypeHeaderValue mediaType) : base(content, encoding, mediaType)
-        {
-
-        }
-
-#endif
         #endregion
     }
 
@@ -134,30 +110,6 @@ namespace Couriers.Common
         {
 
         }
-#if NET7_0_OR_GREATER
-
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        /// <param name="content">The content</param>
-        /// <param name="mediaType">The media type</param>
-        protected TypedStringContent(string content, MediaTypeHeaderValue mediaType) : base(content, mediaType)
-        {
-
-        }
-
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        /// <param name="content">The content</param>
-        /// <param name="encoding">The encoding</param>
-        /// <param name="mediaType">The media type</param>
-        protected TypedStringContent(string content, Encoding? encoding, MediaTypeHeaderValue mediaType) : base(content, encoding, mediaType)
-        {
-
-        }
-
-#endif
         #endregion
     }
 }
