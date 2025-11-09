@@ -18,6 +18,7 @@ namespace Couriers.Common.ResultTypes
         /// A flag indicating whether the operation was successful
         /// </summary>
         [MemberNotNullWhen(false, nameof(ErrorMessage))]
+        [MemberNotNullWhen(true, nameof(RequestPayload), nameof(ResponsePayload))]
         bool IsSuccessful { get; }
 
         /// <summary>

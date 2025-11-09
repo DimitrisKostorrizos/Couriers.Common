@@ -33,6 +33,7 @@ namespace Couriers.Common.ResultTypes
         /// <inheritdoc/>
         /// </summary>
         [MemberNotNullWhen(false, nameof(ErrorMessage))]
+        [MemberNotNullWhen(true, nameof(RequestPayload), nameof(ResponsePayload))]
         public bool IsSuccessful => string.IsNullOrWhiteSpace(ErrorMessage);
 
         /// <summary>

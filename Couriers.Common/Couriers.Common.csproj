@@ -4,12 +4,12 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<Title>Speedex Courier API Client</Title>
+		<Title>Courier API Clients's Common Types</Title>
 		<Authors>Dimitrios Kostorrizos</Authors>
-		<Description>A .Net client used to access the Speedex Courier API</Description>
+		<Description>Contains the common types used across the Courier Client packages.</Description>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<RepositoryUrl>https://github.com/DimitrisKostorrizos/Couriers.Speedex</RepositoryUrl>
-		<PackageProjectUrl>https://github.com/DimitrisKostorrizos/Couriers.Speedex</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/DimitrisKostorrizos/Couriers.Common</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/DimitrisKostorrizos/Couriers.Common</PackageProjectUrl>
 		<PackageTags>Courier;API</PackageTags>
 		<PackageVersion>1.0.0</PackageVersion>
 	</PropertyGroup>
@@ -28,4 +28,9 @@
 		</When>
 	</Choose>
 
+	<ItemGroup>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+		</None>
+	</ItemGroup>
 </Project>
