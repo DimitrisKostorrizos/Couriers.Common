@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<Title>Speedex Courier API Client</Title>
+		<Authors>Dimitrios Kostorrizos</Authors>
+		<Description>A .Net client used to access the Speedex Courier API</Description>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/DimitrisKostorrizos/Couriers.Speedex</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/DimitrisKostorrizos/Couriers.Speedex</PackageProjectUrl>
+		<PackageTags>Courier;API</PackageTags>
+		<PackageVersion>1.0.0</PackageVersion>
+	</PropertyGroup>
+
+	<Choose>
+		<When Condition="'$(Configuration)'=='Debug'">
+			<PropertyGroup>
+				<AnalysisLevel>latest-Recommended</AnalysisLevel>
+			</PropertyGroup>
+		</When>
+		<When Condition="'$(Configuration)'=='Release'">
+			<PropertyGroup>
+				<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+				<Optimize>true</Optimize>
+			</PropertyGroup>
+		</When>
+	</Choose>
+
+</Project>
