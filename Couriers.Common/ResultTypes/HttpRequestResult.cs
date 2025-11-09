@@ -53,12 +53,7 @@ namespace Couriers.Common.ResultTypes
         /// <param name="responsePayload">The response payload</param>
         public HttpRequestResult([NotNull] Exception exception, string? requestPayload, string? responsePayload) : this(exception.Message, requestPayload, responsePayload)
         {
-#if NET6_0_OR_GREATER
             ArgumentNullException.ThrowIfNull(exception);
-#else
-            if (exception is null)
-                throw new ArgumentNullException(nameof(exception));
-#endif
         }
 
         /// <summary>
@@ -69,12 +64,8 @@ namespace Couriers.Common.ResultTypes
         /// <param name="responsePayload">The response payload</param>
         public HttpRequestResult([NotNull] string errorMessage, string? requestPayload, string? responsePayload) : base()
         {
-#if NET8_0_OR_GREATER
             ArgumentException.ThrowIfNullOrWhiteSpace(errorMessage);
-#else
-            if (string.IsNullOrWhiteSpace(errorMessage))
-                throw new ArgumentException($"'{nameof(errorMessage)}' cannot be null or whitespace.", nameof(errorMessage));
-#endif
+
             ErrorMessage = errorMessage;
 
             RequestPayload = requestPayload;

@@ -57,7 +57,6 @@ namespace Couriers.Common
         {
 
         }
-#if NET7_0_OR_GREATER
 
         /// <summary>
         /// <inheritdoc/>
@@ -80,7 +79,6 @@ namespace Couriers.Common
 
         }
 
-#endif
         #endregion
     }
 
@@ -134,7 +132,6 @@ namespace Couriers.Common
         {
 
         }
-#if NET7_0_OR_GREATER
 
         /// <summary>
         /// <inheritdoc/>
@@ -157,7 +154,6 @@ namespace Couriers.Common
 
         }
 
-#endif
         #endregion
     }
 }
