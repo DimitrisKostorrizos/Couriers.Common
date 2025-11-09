@@ -10,7 +10,7 @@ text and response text. In case of any error, the property ErrorMessage can be u
 ```cs
 var result = Method(....)
 
-if(result.IsSuccessful)
+if(!result.IsSuccessful)
 	HandleTheUnsuccessfulCase();
 		
 HandleTheSuccessfulCase();
