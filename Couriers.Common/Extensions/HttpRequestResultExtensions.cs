@@ -22,12 +22,8 @@ namespace Couriers.Common.Extensions
         /// <exception cref="InvalidOperationException">An exception is thrown if the <paramref name="result"/> is successful</exception>
         public static HttpRequestResult<TResult> ToUnsuccessfulHttpRequestResult<TResult>([NotNull] this IHttpRequestResult result, string? errorMessage = null)
         {
-#if NET6_0_OR_GREATER
-            ArgumentNullException.ThrowIfNull(result);
-#else
             if (result is null)
                 throw new ArgumentNullException(nameof(result));
-#endif
 
             if (result.IsSuccessful)
                 throw new InvalidOperationException($"The specified '{nameof(result)}' is successful.");
