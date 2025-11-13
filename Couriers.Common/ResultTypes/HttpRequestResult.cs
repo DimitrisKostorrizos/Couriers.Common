@@ -46,35 +46,26 @@ namespace Couriers.Common.ResultTypes
         #region Constructors
 
         /// <summary>
-        /// <inheritdoc/>
+        /// Creates a new instance of <see cref="HttpRequestResult"/>
         /// </summary>
         /// <param name="exception">The exception</param>
         /// <param name="requestPayload">The request payload</param>
         /// <param name="responsePayload">The response payload</param>
         public HttpRequestResult([NotNull] Exception exception, string? requestPayload, string? responsePayload) : this(exception.Message, requestPayload, responsePayload)
         {
-#if NET6_0_OR_GREATER
             ArgumentNullException.ThrowIfNull(exception);
-#else
-            if (exception is null)
-                throw new ArgumentNullException(nameof(exception));
-#endif
         }
 
         /// <summary>
-        /// <inheritdoc/>
+        /// Creates a new instance of <see cref="HttpRequestResult"/>
         /// </summary>
         /// <param name="errorMessage">The error message</param>
         /// <param name="requestPayload">The request payload</param>
         /// <param name="responsePayload">The response payload</param>
         public HttpRequestResult([NotNull] string errorMessage, string? requestPayload, string? responsePayload) : base()
         {
-#if NET8_0_OR_GREATER
             ArgumentException.ThrowIfNullOrWhiteSpace(errorMessage);
-#else
-            if (string.IsNullOrWhiteSpace(errorMessage))
-                throw new ArgumentException($"'{nameof(errorMessage)}' cannot be null or whitespace.", nameof(errorMessage));
-#endif
+
             ErrorMessage = errorMessage;
 
             RequestPayload = requestPayload;
@@ -83,7 +74,7 @@ namespace Couriers.Common.ResultTypes
         }
 
         /// <summary>
-        /// <inheritdoc/>
+        /// Creates a new instance of <see cref="HttpRequestResult"/>
         /// </summary>
         /// <param name="errorMessage">The error message</param>
         public HttpRequestResult([NotNull] string errorMessage) : this(errorMessage, null, null)
@@ -92,11 +83,11 @@ namespace Couriers.Common.ResultTypes
         }
 
         /// <summary>
-        /// Default constructor
+        /// Creates a new instance of <see cref="HttpRequestResult"/>
         /// </summary>
         /// <param name="requestPayload">The request payload</param>
         /// <param name="responsePayload">The response payload</param>
-        protected HttpRequestResult(string requestPayload, string responsePayload) : base()
+        protected HttpRequestResult(string? requestPayload = null, string? responsePayload = null) : base()
         {
             RequestPayload = requestPayload;
 
@@ -165,7 +156,7 @@ namespace Couriers.Common.ResultTypes
         }
 
         /// <summary>
-        /// <inheritdoc/>
+        /// Creates a new instance of <see cref="HttpRequestResult{T}"/>
         /// </summary>
         /// <param name="errorMessage">The error message</param>
         /// <param name="requestPayload">The request payload</param>
@@ -176,7 +167,7 @@ namespace Couriers.Common.ResultTypes
         }
 
         /// <summary>
-        /// <inheritdoc/>
+        /// Creates a new instance of <see cref="HttpRequestResult{T}"/>
         /// </summary>
         /// <param name="errorMessage">The error message</param>
         public HttpRequestResult([NotNull] string errorMessage) : base(errorMessage, null, null)
@@ -185,12 +176,12 @@ namespace Couriers.Common.ResultTypes
         }
 
         /// <summary>
-        /// Creates a a result that indicates that the operation succeeded with <paramref name="result"/>
+        /// Creates a new instance of <see cref="HttpRequestResult{T}"/>
         /// </summary>
         /// <param name="result">The result</param>
         /// <param name="requestPayload">The request payload</param>
         /// <param name="responsePayload">The response payload</param>
-        public HttpRequestResult(T result, string requestPayload, string responsePayload) : base(requestPayload, responsePayload)
+        public HttpRequestResult(T result, string? requestPayload = null, string? responsePayload = null) : base(requestPayload, responsePayload)
         {
             _result = result;
         }
