@@ -53,8 +53,7 @@ namespace Couriers.Common.ResultTypes
         /// <param name="responsePayload">The response payload</param>
         public HttpRequestResult([NotNull] Exception exception, string? requestPayload, string? responsePayload) : this(exception.Message, requestPayload, responsePayload)
         {
-            if (exception is null)
-                throw new ArgumentNullException(nameof(exception));
+
         }
 
         /// <summary>
@@ -78,18 +77,9 @@ namespace Couriers.Common.ResultTypes
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        /// <param name="errorMessage">The error message</param>
-        public HttpRequestResult([NotNull] string errorMessage) : this(errorMessage, null, null)
-        {
-
-        }
-
-        /// <summary>
-        /// Default constructor
-        /// </summary>
         /// <param name="requestPayload">The request payload</param>
         /// <param name="responsePayload">The response payload</param>
-        protected HttpRequestResult(string requestPayload, string responsePayload) : base()
+        public HttpRequestResult(string? requestPayload, string? responsePayload) : base()
         {
             RequestPayload = requestPayload;
 
@@ -108,7 +98,7 @@ namespace Couriers.Common.ResultTypes
         /// <param name="requestPayload">The request payload</param>
         /// <param name="responsePayload">The response payload</param>
         /// <returns></returns>
-        public static HttpRequestResult<T> FromResult<T>(T result, string requestPayload, string responsePayload)
+        public static HttpRequestResult<T> FromResult<T>(T result, string? requestPayload, string? responsePayload)
             => new(result, requestPayload, responsePayload);
 
         /// <summary>
@@ -171,19 +161,10 @@ namespace Couriers.Common.ResultTypes
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        /// <param name="errorMessage">The error message</param>
-        public HttpRequestResult([NotNull] string errorMessage) : base(errorMessage, null, null)
-        {
-            _result = default!;
-        }
-
-        /// <summary>
-        /// Creates a a result that indicates that the operation succeeded with <paramref name="result"/>
-        /// </summary>
         /// <param name="result">The result</param>
         /// <param name="requestPayload">The request payload</param>
         /// <param name="responsePayload">The response payload</param>
-        public HttpRequestResult(T result, string requestPayload, string responsePayload) : base(requestPayload, responsePayload)
+        public HttpRequestResult(T result, string? requestPayload , string? responsePayload) : base(requestPayload, responsePayload)
         {
             _result = result;
         }
