@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Couriers.Common.Tests
 {
     /// <summary>
-    /// Contains the constants used accross the tests
+    /// Contains the constants used across the tests
     /// </summary>
     public static class TestConstants
     {
