@@ -42,7 +42,7 @@ namespace Couriers.Common
         /// </summary>
         /// <param name="content">The content</param>
         /// <param name="encoding">The encoding</param>
-        public TypedStringContent(string content, Encoding encoding) : base(content, encoding)
+        public TypedStringContent(string content, Encoding? encoding) : base(content, encoding)
         {
 
         }
@@ -53,7 +53,7 @@ namespace Couriers.Common
         /// <param name="content">The content</param>
         /// <param name="encoding">The encoding</param>
         /// <param name="mediaType">The media type</param>
-        public TypedStringContent(string content, Encoding encoding, string mediaType) : base(content, encoding, mediaType)
+        public TypedStringContent(string content, Encoding? encoding, string? mediaType) : base(content, encoding, mediaType)
         {
 
         }
@@ -64,7 +64,7 @@ namespace Couriers.Common
         /// </summary>
         /// <param name="content">The content</param>
         /// <param name="mediaType">The media type</param>
-        public TypedStringContent(string content, MediaTypeHeaderValue mediaType) : base(content, mediaType)
+        public TypedStringContent(string content, MediaTypeHeaderValue? mediaType) : base(content, mediaType)
         {
 
         }
@@ -75,7 +75,7 @@ namespace Couriers.Common
         /// <param name="content">The content</param>
         /// <param name="encoding">The encoding</param>
         /// <param name="mediaType">The media type</param>
-        public TypedStringContent(string content, Encoding? encoding, MediaTypeHeaderValue mediaType) : base(content, encoding, mediaType)
+        public TypedStringContent(string content, Encoding? encoding, MediaTypeHeaderValue? mediaType) : base(content, encoding, mediaType)
         {
 
         }
@@ -119,7 +119,7 @@ namespace Couriers.Common
         /// </summary>
         /// <param name="content">The content</param>
         /// <param name="encoding">The encoding</param>
-        protected TypedStringContent(string content, Encoding encoding) : base(content, encoding)
+        protected TypedStringContent(string content, Encoding? encoding) : base(content, encoding)
         {
 
         }
@@ -130,7 +130,7 @@ namespace Couriers.Common
         /// <param name="content">The content</param>
         /// <param name="encoding">The encoding</param>
         /// <param name="mediaType">The media type</param>
-        protected TypedStringContent(string content, Encoding encoding, string mediaType) : base(content, encoding, mediaType)
+        protected TypedStringContent(string content, Encoding? encoding, string? mediaType) : base(content, encoding, mediaType)
         {
 
         }
@@ -141,7 +141,7 @@ namespace Couriers.Common
         /// </summary>
         /// <param name="content">The content</param>
         /// <param name="mediaType">The media type</param>
-        protected TypedStringContent(string content, MediaTypeHeaderValue mediaType) : base(content, mediaType)
+        protected TypedStringContent(string content, MediaTypeHeaderValue? mediaType) : base(content, mediaType)
         {
 
         }
@@ -152,7 +152,7 @@ namespace Couriers.Common
         /// <param name="content">The content</param>
         /// <param name="encoding">The encoding</param>
         /// <param name="mediaType">The media type</param>
-        protected TypedStringContent(string content, Encoding? encoding, MediaTypeHeaderValue mediaType) : base(content, encoding, mediaType)
+        protected TypedStringContent(string content, Encoding? encoding, MediaTypeHeaderValue? mediaType) : base(content, encoding, mediaType)
         {
 
         }

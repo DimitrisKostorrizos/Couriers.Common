@@ -32,18 +32,6 @@ namespace Couriers.Common.Extensions
             return new HttpRequestResult<TResult>(resultErrorMessage, result.RequestPayload, result.ResponsePayload);
         }
 
-        /// <summary>
-        /// Creates an returns a new instance of <see cref="HttpRequestResult{T}"/> from the specified <paramref name="result"/>
-        /// </summary>
-        /// <typeparam name="T">The type of the result</typeparam>
-        /// <typeparam name="TResult">The type of the new result</typeparam>
-        /// <param name="result">The result</param>
-        /// <param name="errorMessage">The error message</param>
-        /// <returns></returns>
-        /// <exception cref="InvalidOperationException">An exception is thrown if the <paramref name="result"/> is successful</exception>
-        public static HttpRequestResult<TResult> ToUnsuccessfulHttpRequestResult<T, TResult>([NotNull] this IHttpRequestResult<T> result, string? errorMessage = null) 
-            => result.ToUnsuccessfulHttpRequestResult<TResult>(errorMessage);
-
         #endregion
     }
 }
