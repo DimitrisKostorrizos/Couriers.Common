@@ -26,8 +26,6 @@ namespace Couriers.Common.Tests
 
         #region Test Methods
 
-#pragma warning disable CA1707 // Identifiers should not contain underscores
-
         /// <summary>
         /// Validates that when <see cref="HttpRequestResultExtensions.ToUnsuccessfulHttpRequestResult{TResult}(IHttpRequestResult, string?)"/> method is called, 
         /// with <see langword="null"/> result, an <see cref="Exception"/> is thrown
@@ -129,8 +127,6 @@ namespace Couriers.Common.Tests
 
             Assert.Equal(returnedGenericHttpRequestResult.ResponsePayload, genericHttpRequestResult.ResponsePayload);
         }
-
-#pragma warning restore CA1707 // Identifiers should not contain underscores
 
         #endregion
 

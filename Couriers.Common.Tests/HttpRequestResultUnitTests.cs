@@ -26,8 +26,6 @@ namespace Couriers.Common.Tests
 
         #region Test Methods
 
-#pragma warning disable CA1707 // Identifiers should not contain underscores
-
         /// <summary>
         /// Validates that when <see cref="HttpRequestResult"/> constructor is called, 
         /// with empty error message, an <see cref="Exception"/> is thrown
@@ -221,7 +219,6 @@ namespace Couriers.Common.Tests
 
             Assert.Equal(genericResult.Result.ToString(CultureInfo.InvariantCulture), toStringRepresentation);
         }
-#pragma warning restore CA1707 // Identifiers should not contain underscores
 
         #endregion
 
