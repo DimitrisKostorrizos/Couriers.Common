@@ -23,8 +23,6 @@ namespace Couriers.Common.Tests
 
         #region Test Methods
 
-#pragma warning disable CA1707 // Identifiers should not contain underscores
-
         /// <summary>
         /// Validates that when <see cref="TypedStringContent{TRequest, TResponse}"/> constructors are called, 
         /// with <see langword="null"/> content, an <see cref="Exception"/> is thrown
@@ -64,8 +62,6 @@ namespace Couriers.Common.Tests
 
             Assert.Equal(typeof(bool), stringContent.ResponseType);
         }
-
-#pragma warning restore CA1707 // Identifiers should not contain underscores
 
         #endregion
 
