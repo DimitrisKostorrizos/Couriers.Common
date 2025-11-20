@@ -30,7 +30,7 @@ namespace Couriers.Common.Tests
         /// </summary>
         /// <param name="length">The length of the returned string</param>
         /// <returns></returns>
-        public static string RenerateRandomString(int length)
+        public static string GenerateRandomString(int length)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(length);
 
