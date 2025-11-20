@@ -53,9 +53,9 @@ namespace Couriers.Common.Tests
         {
             var errorMessage = "An error occurred.";
 
-            var requestPayload = TestHelpers.RenerateRandomString(10);
+            var requestPayload = TestHelpers.GenerateRandomString(10);
 
-            var responsePayload = TestHelpers.RenerateRandomString(10);
+            var responsePayload = TestHelpers.GenerateRandomString(10);
 
             var result = new HttpRequestResult(errorMessage, requestPayload, responsePayload);
 
@@ -111,9 +111,9 @@ namespace Couriers.Common.Tests
         {
             var errorMessage = "An error occurred.";
 
-            var requestPayload = TestHelpers.RenerateRandomString(10);
+            var requestPayload = TestHelpers.GenerateRandomString(10);
 
-            var responsePayload = TestHelpers.RenerateRandomString(10);
+            var responsePayload = TestHelpers.GenerateRandomString(10);
 
             var exception = new InvalidCastException(errorMessage);
 
@@ -155,9 +155,9 @@ namespace Couriers.Common.Tests
         [Fact]
         public void HttpRequestResult_WithResult_IsSuccessful()
         {
-            var requestPayload = TestHelpers.RenerateRandomString(10);
+            var requestPayload = TestHelpers.GenerateRandomString(10);
 
-            var responsePayload = TestHelpers.RenerateRandomString(10);
+            var responsePayload = TestHelpers.GenerateRandomString(10);
 
             var value = 5;
 
@@ -199,9 +199,9 @@ namespace Couriers.Common.Tests
         [Fact]
         public void FromResult_WithResult_IsSuccessful()
         {
-            var requestPayload = TestHelpers.RenerateRandomString(10);
+            var requestPayload = TestHelpers.GenerateRandomString(10);
 
-            var responsePayload = TestHelpers.RenerateRandomString(10);
+            var responsePayload = TestHelpers.GenerateRandomString(10);
 
             var value = 5;
 
