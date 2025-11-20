@@ -69,9 +69,9 @@ namespace Couriers.Common.Tests
         {
             var exception = new InvalidOperationException("An error occurred.");
 
-            var requestPayload = TestHelpers.RenerateRandomString(10);
+            var requestPayload = TestHelpers.GenerateRandomString(10);
 
-            var responsePayload = TestHelpers.RenerateRandomString(10);
+            var responsePayload = TestHelpers.GenerateRandomString(10);
 
             var httpRequestResult = new HttpRequestResult(exception, requestPayload, responsePayload);
 
@@ -103,11 +103,11 @@ namespace Couriers.Common.Tests
         {
             var exception = new InvalidOperationException("An error occurred.");
 
-            var requestPayload = TestHelpers.RenerateRandomString(10);
+            var requestPayload = TestHelpers.GenerateRandomString(10);
 
-            var responsePayload = TestHelpers.RenerateRandomString(10);
+            var responsePayload = TestHelpers.GenerateRandomString(10);
 
-            var newErrorMessage = TestHelpers.RenerateRandomString(10);
+            var newErrorMessage = TestHelpers.GenerateRandomString(10);
 
             var httpRequestResult = new HttpRequestResult(exception, requestPayload, responsePayload);
 
