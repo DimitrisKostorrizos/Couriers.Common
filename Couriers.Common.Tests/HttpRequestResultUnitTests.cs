@@ -30,7 +30,7 @@ namespace Couriers.Common.Tests
         /// Validates that when <see cref="HttpRequestResult"/> constructor is called, 
         /// with empty error message, an <see cref="Exception"/> is thrown
         /// </summary>
-        /// <param name="value">The error message</param>
+        /// <param name="value">The empty <see cref="string"/> value</param>
         [Theory]
         [MemberData(nameof(TestConstants.EmptyStringValues), MemberType = typeof(TestConstants))]
         public void HttpRequestResult_WithEmptyErrorMessage_ThrowsException(string? value)
