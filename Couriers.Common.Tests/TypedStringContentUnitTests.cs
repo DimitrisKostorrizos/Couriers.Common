@@ -6,7 +6,7 @@ namespace Couriers.Common.Tests
     /// <summary>
     /// Contains the tests regarding the <see cref="TypedStringContent"/>
     /// </summary>
-    public class TypedStringContentUnitTests
+    public sealed class TypedStringContentUnitTests
     {
         #region Constructors
 
