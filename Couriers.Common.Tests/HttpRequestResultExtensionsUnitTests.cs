@@ -8,7 +8,7 @@ namespace Couriers.Common.Tests
     /// <summary>
     /// Contains the tests regarding the <see cref="HttpRequestResultExtensions"/>
     /// </summary>
-    public class HttpRequestResultExtensionsUnitTests
+    public sealed class HttpRequestResultExtensionsUnitTests
     {
         #region Constructors
 
@@ -49,9 +49,13 @@ namespace Couriers.Common.Tests
         [Fact]
         public void ToUnsuccessfulHttpRequestResult_WithSuccessfulResult_ThrowsException()
         {
-            var httpRequestResult = new HttpRequestResult(null, null);
+            var requestPayload = TestHelpers.GenerateRandomString(10);
 
-            var genericHttpRequestResult = new HttpRequestResult<int>(0, null, null);
+            var responsePayload = TestHelpers.GenerateRandomString(10);
+
+            var httpRequestResult = new HttpRequestResult(requestPayload, responsePayload);
+
+            var genericHttpRequestResult = new HttpRequestResult<int>(0, requestPayload, responsePayload);
 
             Assert.ThrowsAny<Exception>(() => httpRequestResult.ToUnsuccessfulHttpRequestResult<object>());
 
