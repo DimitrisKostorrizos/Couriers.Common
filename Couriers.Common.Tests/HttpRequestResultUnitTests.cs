@@ -8,7 +8,7 @@ namespace Couriers.Common.Tests
     /// <summary>
     /// Contains the tests regarding the <see cref="HttpRequestResult"/>
     /// </summary>
-    public class HttpRequestResultUnitTests
+    public sealed class HttpRequestResultUnitTests
     {
         #region Constructors
 
@@ -40,6 +40,28 @@ namespace Couriers.Common.Tests
             Assert.ThrowsAny<Exception>(() => new HttpRequestResult(errorMessage, null, null));
 
             Assert.ThrowsAny<Exception>(() => new HttpRequestResult<int>(errorMessage, null, null));
+        }
+
+        /// <summary>
+        /// Validates that when <see cref="HttpRequestResult"/> constructor is called, 
+        /// with empty request and response payloads, an <see cref="Exception"/> is thrown
+        /// </summary>
+        /// <param name="value">The empty <see cref="string"/> value</param>
+        [Theory]
+        [MemberData(nameof(TestConstants.EmptyStringValues), MemberType = typeof(TestConstants))]
+        public void HttpRequestResult_WithEmptyPayloads_ThrowsException(string? value)
+        {
+            var requestPayload = TestHelpers.GenerateRandomString(10);
+
+            var responsePayload = TestHelpers.GenerateRandomString(10);
+
+            Assert.ThrowsAny<Exception>(() => new HttpRequestResult(value!, responsePayload));
+
+            Assert.ThrowsAny<Exception>(() => new HttpRequestResult(requestPayload, value!));
+
+            Assert.ThrowsAny<Exception>(() => new HttpRequestResult<int>(0, value!, responsePayload));
+
+            Assert.ThrowsAny<Exception>(() => new HttpRequestResult<int>(0, requestPayload, value!));
         }
 
         /// <summary>
